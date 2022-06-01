@@ -117,17 +117,17 @@ export default function Home() {
 
             <div className="flex flex-col md:items-start items-center justify-center text-center font-coiny text-gray-800 px-4 md:px-0 py-10 mt-14">
               <h2 className="font-bold text-2xl md:text-4xl uppercase">
-                About BoredApes
+                About CyberWojakz
               </h2>
 
               <p className="mt-6 text-lg">
-                {`BoredApes are a collection of 5,555 burning hot NFTs living in
-                the core of the blockchain. Each individual BoredApes is
-                carefully curated from over 150 traits, along with some
-                incredibly rare 1/1s that have traits that can't be found from
-                any other BoredApes. Our vision is to create an amazing project
-                that will shed light, joy, love, and creativity! Burn on,
-                BoredApes!`}
+                {`CyberWojakz are NFTs with a retro-futuristic twist of the infamous Wojaks.
+
+Taking the original Wojak face expressions, we have created them in a more 3D look, dressed them with cool retro style clothing over Synthwave-like backgrounds. 
+
+There are 105 attributes, leading to 4111 unique variations, with 300 rares and only 6 legendaries well hidden into the mint (wagmi).
+
+Your CyberWojakz will open you the doors to CyberWojakz world, and allow you, if you are one of the braves, to get exclusive NFTs!`}
               </p>
             </div>
           </div>

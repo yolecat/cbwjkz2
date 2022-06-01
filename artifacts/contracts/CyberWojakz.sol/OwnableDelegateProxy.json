@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "OwnableDelegateProxy",
+  "sourceName": "contracts/CyberWojakz.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220cc149ba5d1071e82f09c6f2396b812f2fa1232186fc00746a4e3dc6e895f19d064736f6c63430008090033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220cc149ba5d1071e82f09c6f2396b812f2fa1232186fc00746a4e3dc6e895f19d064736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

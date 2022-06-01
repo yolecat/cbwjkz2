@@ -9,6 +9,7 @@ import {
   isPublicSaleState,
   isPreSaleState,
   presaleMint,
+  getPrice,
   publicMint
 } from '../utils/interact'
 
@@ -18,6 +19,7 @@ export default function Mint() {
   const connectedWallets = useWallets()
 
   const [maxSupply, setMaxSupply] = useState(0)
+  const [price, setPrice] = useState(10000000000000000)
   const [totalMinted, setTotalMinted] = useState(0)
   const [maxMintAmount, setMaxMintAmount] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -70,6 +72,8 @@ export default function Mint() {
     const init = async () => {
       setMaxSupply(await getMaxSupply())
       setTotalMinted(await getTotalMinted())
+      setPrice(await getPrice())
+
 
       setPaused(await isPausedState())
       setIsPublicSale(await isPublicSaleState())
@@ -111,7 +115,7 @@ export default function Mint() {
   const publicMintHandler = async () => {
     setIsMinting(true)
 
-    const { success, status } = await publicMint(mintAmount)
+    const { success, status } = await publicMint(mintAmount,price)
 
     setStatus({
       success,
@@ -164,8 +168,8 @@ export default function Mint() {
                 </div>
 
                 <img
-                  src="/images/13.png"
-                  className="object-cover w-full sm:h-[280px] md:w-[250px] rounded-md"
+                  src="/images/cyberwojak1.png"
+                  className="object-cover w-full sm:h-[315px] md:w-[500px] rounded-md"
                 />
               </div>
 
@@ -226,10 +230,10 @@ export default function Mint() {
 
                     <div className="flex items-center space-x-3">
                       <p>
-                        {Number.parseFloat(config.price * mintAmount).toFixed(
-                          2
+                        {Number.parseFloat(price * 1e-18* mintAmount).toFixed(//config.price * mintAmount).toFixed(
+                          3
                         )}{' '}
-                        ETH
+                        Metis
                       </p>{' '}
                       <span className="text-gray-400">+ GAS</span>
                     </div>
@@ -268,7 +272,7 @@ export default function Mint() {
                 } rounded-md text-start h-full px-4 py-4 w-full mx-auto mt-8 md:mt-4"`}
               >
                 <p className="flex flex-col space-y-2 text-white text-sm md:text-base break-words ...">
-                  {status.message}
+                  {status.message }
                 </p>
               </div>
             )}
@@ -279,7 +283,7 @@ export default function Mint() {
                 Contract Address
               </h3>
               <a
-                href={`https://rinkeby.etherscan.io/address/${config.contractAddress}#readContract`}
+                href={`https://stardust-explorer.metis.io/address/${config.contractAddress}#readContract`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 mt-4"

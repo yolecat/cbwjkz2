@@ -23,7 +23,12 @@ module.exports = {
     rinkeby: {
       url: `${process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL}`,
       accounts: [`0x${process.env.METAMASK_PRIVATE_KEY}`]
-    }
+    },
+    metis: {
+      url: "https://stardust.metis.io/?owner=588",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
   },
   paths: {
     sources: './contracts',

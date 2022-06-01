@@ -3,11 +3,17 @@ const { MerkleTree } = require('merkletreejs')
 const keccak256 = require('keccak256')
 const whitelist = require('../scripts/whitelist.js')
 
-const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL)
+//const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL)
+
+import Web3 from 'web3';
+
+const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+
 import { config } from '../dapp.config'
 
-const contract = require('../artifacts/contracts/BoredApe.sol/BoredApe.json')
+const contract = require('../artifacts/contracts/CyberWojakz.sol/CyberWojakz.json')
 const nftContract = new web3.eth.Contract(contract.abi, config.contractAddress)
+
 
 // Calculate merkle root from the whitelist array
 const leafNodes = whitelist.map((addr) => keccak256(addr))
@@ -40,8 +46,8 @@ export const isPreSaleState = async () => {
 }
 
 export const getPrice = async () => {
-  const price = await nftContract.methods.price().call()
-  return price
+  var prices = await nftContract.methods.price().call()
+  return prices
 }
 
 export const presaleMint = async (mintAmount) => {
@@ -75,7 +81,7 @@ export const presaleMint = async (mintAmount) => {
     to: config.contractAddress,
     from: window.ethereum.selectedAddress,
     value: parseInt(
-      web3.utils.toWei(String(config.price * mintAmount), 'ether')
+      web3.utils.toWei(String(prices * mintAmount), 'ether')//config.price * mintAmount), 'ether')
     ).toString(16), // hex
     data: nftContract.methods
       .presaleMint(window.ethereum.selectedAddress, mintAmount, proof)
@@ -101,16 +107,22 @@ export const presaleMint = async (mintAmount) => {
   } catch (error) {
     return {
       success: false,
-      status: '😞 Smth went wrong:' + error.message
+      status: 'Nooo Something went wrong:' + error.message
     }
   }
 }
 
-export const publicMint = async (mintAmount) => {
+
+
+
+
+
+
+export const publicMint = async (mintAmount, price) => {
   if (!window.ethereum.selectedAddress) {
     return {
       success: false,
-      status: 'To be able to mint, you need to connect your wallet'
+      status: 'Wen mint? wen wallect will be connected!'
     }
   }
 
@@ -118,14 +130,16 @@ export const publicMint = async (mintAmount) => {
     window.ethereum.selectedAddress,
     'latest'
   )
+  const pricu = Number.parseFloat(nftContract.methods.price())
 
   // Set up our Ethereum transaction
   const tx = {
     to: config.contractAddress,
     from: window.ethereum.selectedAddress,
-    value: parseInt(
-      web3.utils.toWei(String(config.price * mintAmount), 'ether')
-    ).toString(16), // hex
+    value: parseInt(price* mintAmount).toString(16),//String(pricu//config.price * mintAmount).toFixed(
+      //,'ether')
+      //web3.utils.toWei(String(pricu * mintAmount), 'ether')//config.price * mintAmount), 'ether')
+    //).toString(16), // hex
     data: nftContract.methods.publicSaleMint(mintAmount).encodeABI(),
     nonce: nonce.toString(16)
   }
@@ -148,7 +162,7 @@ export const publicMint = async (mintAmount) => {
   } catch (error) {
     return {
       success: false,
-      status: '😞 Smth went wrong:' + error.message
+      status: 'Nooo Something went wrong:' + error.message
     }
   }
 }
