@@ -142,7 +142,7 @@ export default function Mint() {
         />
         <img
           src="/images/stars.png"
-          className="animate-pulse-slow absolute top-[1919px] block w-full min-h-fit object-cover opacity-90"
+          className="animate-pulse-slow absolute top-[1920px] block w-full min-h-fit object-cover opacity-90"
         />
 
         <div className="flex flex-col items-center justify-center h-full w-full px-2 md:px-10">
