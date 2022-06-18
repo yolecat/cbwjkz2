@@ -98,9 +98,9 @@ export const presaleMint = async (mintAmount) => {
     return {
       success: true,
       status: (
-        <a href={`https://rinkeby.etherscan.io/tx/${txHash}`} target="_blank">
+        <a href={`https://stardust-explorer.metis.io/tx/${txHash}`} target="_blank">
           <p>✅ Check out your transaction on Etherscan:</p>
-          <p>{`https://rinkeby.etherscan.io/tx/${txHash}`}</p>
+          <p>{`https://stardust-explorer.metis.io/tx/${txHash}`}</p>
         </a>
       )
     }
@@ -153,9 +153,9 @@ export const publicMint = async (mintAmount, price) => {
     return {
       success: true,
       status: (
-        <a href={`https://rinkeby.etherscan.io/tx/${txHash}`} target="_blank">
-          <p>✅ Check out your transaction on Etherscan:</p>
-          <p>{`https://rinkeby.etherscan.io/tx/${txHash}`}</p>
+        <a href={`https://stardust-explorer.metis.io/tx/${txHash}`} target="_blank">
+          <p>✅ Check out your transaction on block explorer:</p>
+          <p>{`https://stardust-explorer.metis.io/tx/${txHash}`}</p>
         </a>
       )
     }

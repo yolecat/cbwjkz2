@@ -17,7 +17,7 @@ module.exports = {
       }
     }
   },
-  defaultNetwork: 'rinkeby',
+  //defaultNetwork: 'rinkeby',
   networks: {
     hardhat: {},
     rinkeby: {
@@ -27,7 +27,7 @@ module.exports = {
     metis: {
       url: "https://stardust.metis.io/?owner=588",
       accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+        process.env.METAMASK_PRIVATE_KEY !== undefined ? [process.env.METAMASK_PRIVATE_KEY] : [],
     },
   },
   paths: {
@@ -40,6 +40,7 @@ module.exports = {
     timeout: 40000
   },
   etherscan: {
-    apiKey: `${process.env.ETHERSCAN_API_KEY}`
+    //apiKey: `${process.env.ETHERSCAN_API_KEY}`
+    apiKey: 'api-key'
   }
 }

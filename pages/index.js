@@ -130,7 +130,19 @@ export default function Mint() {
       <div className="relative w-full h-full flex flex-col items-center justify-center">
         <img
           src="/images/blur.jpeg"
-          className="animate-pulse-slow absolute inset-auto block w-full min-h-screen object-cover"
+          className="animate-pulse-slow absolute inset-auto block w-full min-h-full object-cover"
+        />
+       <img
+          src="/images/stars.png"
+          className="animate-pulse-slow absolute top-[0px] block w-full min-h-fit object-cover opacity-90"
+        />
+        <img
+          src="/images/stars.png"
+          className="animate-pulse-slow absolute top-[960px] block w-full min-h-fit object-cover opacity-90"
+        />
+        <img
+          src="/images/stars.png"
+          className="animate-pulse-slow absolute top-[1919px] block w-full min-h-fit object-cover opacity-90"
         />
 
         <div className="flex flex-col items-center justify-center h-full w-full px-2 md:px-10">
@@ -147,10 +159,13 @@ export default function Mint() {
                 Disconnect
               </button>
             )}
-            <h1 className="font-coiny uppercase font-bold text-3xl md:text-4xl bg-gradient-to-br  from-brand-green to-brand-blue bg-clip-text text-transparent mt-3">
-              {paused ? 'Paused' : isPreSale ? 'Pre-Sale' : 'Public Sale'}
+            <h1 className="font-coiny uppercase font-bold text-4xl md:text-5xl bg-gradient-to-br from-brand-pink to-brand-purple bg-clip-text text-transparent mt-3">
+              CyberWojakz
             </h1>
-            <h3 className="text-sm text-pink-200 tracking-widest">
+            <h1 className="font-coiny uppercase font-bold text-3xl md:text-4xl bg-gradient-to-br from-brand-green to-brand-blue bg-clip-text text-transparent mt-3">
+              {paused ? 'Paused' : 'Public Sale'}
+            </h1>
+            <h3 className="text-sm text-pink-200 tracking-widest mt-4">
               {wallet?.accounts[0]?.address
                 ? wallet?.accounts[0]?.address.slice(0, 8) +
                   '...' +
@@ -162,7 +177,7 @@ export default function Mint() {
               <div className="relative w-full">
                 <div className="font-coiny z-10 absolute top-2 left-2 opacity-80 filter backdrop-blur-lg text-base px-4 py-2 bg-black border border-brand-purple rounded-md flex items-center justify-center text-white font-semibold">
                   <p>
-                    <span className="text-brand-pink">{totalMinted}</span> /{' '}
+                    <span className="text-brand-blue">{totalMinted}</span> /{' '}
                     {maxSupply}
                   </p>
                 </div>
@@ -195,7 +210,7 @@ export default function Mint() {
                     </svg>
                   </button>
 
-                  <p className="flex items-center justify-center flex-1 grow text-center font-bold text-brand-pink text-3xl md:text-4xl">
+                  <p className="flex items-center justify-center flex-1 grow text-center font-bold text-brand-blue text-3xl md:text-4xl">
                     {mintAmount}
                   </p>
 
@@ -247,7 +262,7 @@ export default function Mint() {
                       paused || isMinting
                         ? 'bg-gray-900 cursor-not-allowed'
                         : 'bg-gradient-to-br from-brand-purple to-brand-pink shadow-lg hover:shadow-pink-400/50'
-                    } font-coiny mt-12 w-full px-6 py-3 rounded-md text-2xl text-white  mx-4 tracking-wide uppercase`}
+                    } font-coiny mt-12 w-full px-6 py-3 rounded-md text-2xl text-white mx-4 tracking-wide uppercase`}
                     disabled={paused || isMinting}
                     onClick={isPreSale ? presaleMintHandler : publicMintHandler}
                   >
@@ -268,7 +283,7 @@ export default function Mint() {
             {status && (
               <div
                 className={`border ${
-                  status.success ? 'border-green-500' : 'border-brand-pink-400 '
+                  status.success ? 'border-brand-blue' : 'border-brand-pink-400 '
                 } rounded-md text-start h-full px-4 py-4 w-full mx-auto mt-8 md:mt-4"`}
               >
                 <p className="flex flex-col space-y-2 text-white text-sm md:text-base break-words ...">
@@ -279,18 +294,62 @@ export default function Mint() {
 
             {/* Contract Address */}
             <div className="border-t border-gray-800 flex flex-col items-center mt-10 py-2 w-full">
-              <h3 className="font-coiny text-2xl text-brand-pink uppercase mt-6">
-                Contract Address
+              <h3 className="font-coiny text-2xl text-brand-pink uppercase mt-2">
+                Verified Contract
               </h3>
               <a
                 href={`https://stardust-explorer.metis.io/address/${config.contractAddress}#readContract`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 mt-4"
+                className="text-gray-400 mt-2"
               >
                 <span className="break-all ...">{config.contractAddress}</span>
               </a>
+              <h1 className="font-coiny uppercase font-bold text-3xl md:text-4xl bg-gradient-to-br from-brand-green to-brand-blue bg-clip-text text-transparent mt-3">
+                ↓ Why mint? ↓
+              </h1>
+              <h2 className="font-coiny uppercase font-bold text-2xl md:text-3xl text-brand-pink mt-8">
+                GAME ACCESS
+              </h2>
+              <a className='text-white mt-3'>
+              Minting CyberWojakz NFTs will allow you to play the game to be released, in which you will be able to mint exclusive NFTs. If you don’t own NFTs from the classic 4111 collection, you will only be able to get exclusive ones by buying them on the secondary market. Exclusive NFTs will grant you special accesses and bonuses under various forms (can't tell you more just now).
+              </a>
+              <img
+                  src="/images/exclusive_DICE.jpeg"
+                  className="object-cover sm:h-[600px] md:w-[400] rounded-md mt-4"
+                />
+              <h2 className="font-coiny uppercase font-bold text-2xl md:text-3xl text-brand-pink mt-8">
+                ART
+              </h2>
+              <a className='text-white mt-3'>
+              The art is of great quality. Made by talented artists, each CyberWojakz NFT is 2960×2960 pixels. There are 4111 total unique classic CyberWojakz NFTs, amongst which 7 legendaries.
+              Waiting for the rarity tool when the whole collection will be minted, check your trait rarity here: https://cyberwojakz.io/rarity/
+              </a>
+              <img
+                  src="/images/GIF2.gif"
+                  className="object-cover sm:h-[315px] md:w-[315] rounded-md mt-4"
+                />
+                <a className='text-white mt-4'>
+                  The art design is from the original Wojak meme. Face expressions, backgrounds, accessories, have all been inspired by the Wojak meme icon, simply revisited in a Synthwave style, which we think is cool :)
+                </a>
+              <h2 className="font-coiny uppercase font-bold text-2xl md:text-3xl text-brand-pink mt-8">
+                ARPDORI
+              </h2>
+              <a className='text-white mt-3'>
+                ?????
+              </a>
+              <h2 className="font-coiny uppercase font-bold text-2xl md:text-3xl text-brand-pink mt-8">
+                METIS FAM
+              </h2>
+              <a className='text-white mt-3'>
+                Metis network is a family. We believe Metis will become a major player in the future, that is why we are here, but also because Metis has built a solid community. We created the CyberWojakz for Metis community. indeed, after all the copycat NFTs released at early stages, we wanted to bring an orignal collection, based on a famous crypto meme currently missing on Metis: the Wojak. We intend to become a meme reference on Metis, building for the community. Many ideas crosses our minds (mini games) to implement as a way for the community to stay engaged with the project but also to create a real interest (basically, the prospect of making money). appart from the main game, the mini games are at the stage of idea, to be developped in coordination with the community.
+              </a>
+              <img
+                  src="/images/metis.png"
+                  className="object-cover sm:h-[250px] md:w-[250] rounded-md mt-4"
+                />
             </div>
+
           </div>
         </div>
       </div>

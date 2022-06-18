@@ -36,6 +36,12 @@ const initOnboard = init({
       token: 'rETH',
       label: 'Ethereum Rinkeby Testnet',
       rpcUrl: RPC_URL
+    },
+    {
+      id: '0x24C',
+      token: 'tMetis',
+      label: 'Metis Stardust Testnet',
+      rpcUrl: "https://stardust.metis.io/?owner=588"
     }
     // {
     //   id: '0x89',
@@ -45,20 +51,13 @@ const initOnboard = init({
     // }
   ],
   appMetadata: {
-    name: 'BoredApes',
+    name: 'CyberWojakz',
     icon: ApeIcon,
-    description: 'We are some bored apes',
+    description: 'CyberWojakz minting dapp',
     recommendedInjectedWallets: [
       { name: 'MetaMask', url: 'https://metamask.io' },
       { name: 'Coinbase', url: 'https://wallet.coinbase.com/' }
-    ],
-    agreement: {
-      version: '1.0.0',
-      termsUrl: 'https://www.blocknative.com/terms-conditions',
-      privacyUrl: 'https://www.blocknative.com/privacy-policy'
-    },
-    gettingStartedGuide: 'https://blocknative.com',
-    explore: 'https://blocknative.com'
+    ]
   }
 })
 

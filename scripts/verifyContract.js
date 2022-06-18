@@ -20,7 +20,7 @@ async function main() {
   const root = merkleTree.getRoot()
 
   await hre.run('verify:verify', {
-    address: '0xa7F96ebb586Eb6b2fE39515c4fb38d20D2ddCAe7', // Deployed contract address
+    address: '0xf96b98E797a50dbfE38088d0380f67141D48F015', // Deployed contract address
     constructorArguments: [BASE_URI, root, proxyRegistryAddressRinkeby]
   })
 }

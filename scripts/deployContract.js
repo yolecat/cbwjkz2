@@ -20,16 +20,16 @@ async function main() {
   const root = merkleTree.getRoot()
 
   // Deploy the contract
-  const BoredApes = await hre.ethers.getContractFactory('CyberWojakz')
-  const boredApes = await BoredApes.deploy(
+  const CyberWojakz = await hre.ethers.getContractFactory('CyberWojakz')
+  const cyberWojakz = await CyberWojakz.deploy(
     BASE_URI,
     root,
     proxyRegistryAddressRinkeby
   )
 
-  await boredApes.deployed()
+  await cyberWojakz.deployed()
 
-  console.log('BoredApes deployed to:', boredApes.address)
+  console.log('CyberWojakz deployed to:', cyberWojakz.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere

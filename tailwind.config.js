@@ -20,7 +20,7 @@ module.exports = {
         'brand-background': 'var(--clr-background)'
       },
       animation: {
-        'pulse-slow': 'pulse 10s linear infinite'
+        'pulse-slow': 'pulse 8s linear infinite',
       }
     }
   },
