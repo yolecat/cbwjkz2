@@ -314,7 +314,7 @@ export default function Mint() {
               <a className="text-white mt-3">
                 Minting CyberWojakz NFTs will allow you to play the game to be released, in which you will be able to mint exclusive NFTs. If you don’t own NFTs from the classic 4111 collection, you will only be able to get exclusive ones by buying them on the secondary market. Exclusive NFTs will grant you special accesses and bonuses under various forms (cannot tell you more just now).
               </a>
-              <image
+              <img
                   src="/images/exclusive_DICE.jpeg"
                   className="object-cover sm:h-[600px] md:w-[400] rounded-md mt-4"
                 />
@@ -325,7 +325,7 @@ export default function Mint() {
               The art is of great quality. Made by talented artists, each CyberWojakz NFT is 2960×2960 pixels. There are 4111 total unique classic CyberWojakz NFTs, amongst which 7 legendaries.
               Waiting for the rarity tool when the whole collection will be minted, check your trait rarity here: https://cyberwojakz.io/rarity/
               </a>
-              <image
+              <img
                   src="/images/GIF2.gif"
                   className="object-cover sm:h-[315px] md:w-[315] rounded-md mt-4"
                 />
@@ -344,7 +344,7 @@ export default function Mint() {
               <a className="text-white mt-3">
                 Metis network is a family. We believe Metis will become a major player in the future, that is why we are here, but also because Metis has built a solid community. We created the CyberWojakz for Metis community. indeed, after all the copycat NFTs released at early stages, we wanted to bring an orignal collection, based on a famous crypto meme currently missing on Metis: the Wojak. We intend to become a meme reference on Metis, building for the community. Many ideas crosses our minds (mini games) to implement as a way for the community to stay engaged with the project but also to create a real interest (basically, the prospect of making money). appart from the main game, the mini games are at the stage of idea, to be developped in coordination with the community.
               </a>
-              <image
+              <img
                   src="/images/metis.png"
                   className="object-cover sm:h-[250px] md:w-[250] rounded-md mt-4"
                 />
