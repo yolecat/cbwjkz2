@@ -128,19 +128,19 @@ export default function Mint() {
   return (
     <div className="min-h-screen h-full w-full overflow-hidden flex flex-col items-center justify-center bg-brand-background ">
       <div className="relative w-full h-full flex flex-col items-center justify-center">
-        <image
+        <img
           src="/images/blur.jpeg"
           className="animate-pulse-slow absolute inset-auto block w-full min-h-full object-cover"
         />
-       <image
+       <img
           src="/images/stars.png"
           className="animate-pulse-slow absolute top-[0px] block w-full min-h-fit object-cover opacity-90"
         />
-        <image
+        <img
           src="/images/stars.png"
           className="animate-pulse-slow absolute top-[960px] block w-full min-h-fit object-cover opacity-90"
         />
-        <image
+        <img
           src="/images/stars.png"
           className="animate-pulse-slow absolute top-[1920px] block w-full min-h-fit object-cover opacity-90"
         />
@@ -182,7 +182,7 @@ export default function Mint() {
                   </p>
                 </div>
 
-                <image
+                <img
                   src="/images/cyberwojak1.png"
                   className="object-cover w-full sm:h-[315px] md:w-[500px] rounded-md"
                 />
